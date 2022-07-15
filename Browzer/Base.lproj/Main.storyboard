@@ -20,22 +20,41 @@
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="▼" systemItem="refresh" id="Rg1-Zb-jkM"/>
+                                    <barButtonItem title="▼" systemItem="refresh" id="Rg1-Zb-jkM">
+                                        <connections>
+                                            <action selector="reloadTapped:" destination="BYZ-38-t0r" id="B8m-p7-XSe"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="e8e-gR-wxC"/>
-                                    <barButtonItem title="◀︎" id="ZVb-DS-yBg"/>
+                                    <barButtonItem title="◀︎" id="ZVb-DS-yBg">
+                                        <connections>
+                                            <action selector="backTapped:" destination="BYZ-38-t0r" id="YWa-Lb-rkP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="B93-w7-6jR"/>
-                                    <barButtonItem title="▶︎" id="XnY-4v-byk"/>
+                                    <barButtonItem title="▶︎" id="XnY-4v-byk">
+                                        <connections>
+                                            <action selector="forwardTapped:" destination="BYZ-38-t0r" id="3Xf-qG-EsY"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TDI-0N-fxk">
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-zo-JGy">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="692"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="fUi-zo-JGy" id="4fq-Oq-hN5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
